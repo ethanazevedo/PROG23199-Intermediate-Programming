@@ -11,8 +11,9 @@ Purpose:
 #include <string.h>
 #include <stdlib.h>
 #include <time.h>
-#include <stdbool.h> 
-    
+#include <stdbool.h>     
+#include <ctype.h>
+
 //function prototypes for craps game.
 int roll_dice(void);
 bool play_game(void);
@@ -92,7 +93,7 @@ int main(void){ // main function.
         break;
 
         case 4: // if user selects 4, print goodbye message and exit program.
-        printf("You have Selected: Quit\n \n Bye Bye!!\n");
+        printf("You have Selected: Quit\n \nBye Bye!!\n");
         break;
 
     }
@@ -281,7 +282,7 @@ double get_avg_word_len(const char* sentence){
 
     for (int i = 0; *(sentence + i) != '\0'; i++) { // loop through each character in the sentence until the null terminator is reached, counting the number of words and characters in the sentence.
         char c = *(sentence + i); // get the current character from the sentence, stores in c variable.
-        if (c == ' ') { // if the current character is a space, increment the word count by 1.
+        if (c == ' ' && isalnum(*(sentence + i + 1))) { // if the current character is a space, increment the word count by 1.
             word_count += 1;
         } 
         else if ( c >= 'a' && c <= 'z' || c >= 'A' && c <= 'Z') { // if the current character is a letter (either uppercase or lowercase), increment the character count by 1.

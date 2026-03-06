@@ -196,7 +196,7 @@ void caesar_cipher(void){
     
     do { // ask the user to enter a message to be encrypted and a shift amount, and validate their input.
         printf("\nEnter message to be encrypted: ");
-        scanf("%s", str1);
+        scanf(" %[^\n]", str1);
         printf("\nEnter shift amount (1-25): ");
         scanf("%d", &shift);
 

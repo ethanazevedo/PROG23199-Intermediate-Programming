@@ -1,3 +1,12 @@
+/*
+Author: Ethan Azevedo
+Date: April 9th, 2026
+Program: program.cpp
+Purpose: 
+    A program that demonstrates string encryption and decryption using a simple XOR cipher. 
+*/
+
+
 #include <iostream>
 #include <string>
 using namespace std;
